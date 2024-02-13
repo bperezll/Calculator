@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Calculator</string>
+    <string name="result_display">%1$s</string>
+    <string name="btn_clear">C</string>
+    <string name="btn_clear_description">Clear</string>
+    <string name="btn_percentage">%</string>
+    <string name="btn_percentage_description">Percentage</string>
+    <string name="btn_division">÷</string>
+    <string name="btn_division_description">Division</string>
+    <string name="btn_backspace_description">Backspace</string>
+</resources>
