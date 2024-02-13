@@ -170,7 +170,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/threeBtn"
             style="@style/CommonButton"
-            android:text="6"
+            android:text="3"
             android:background="@color/btn_color_light"
             android:contentDescription="Three"
             app:layout_constraintStart_toEndOf="@id/fiveBtn"
