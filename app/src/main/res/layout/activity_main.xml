@@ -10,182 +10,209 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/calculatorResult"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="end"
+        android:layout_height="0dp"
+        android:gravity="bottom|end"
         android:text="@string/result_display"
-        android:textSize="60sp"
         android:textColor="@color/white"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toTopOf="@id/clearBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/firstColumn"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/firstColumn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/clearBtn"
+        style="@style/CommonButton"
+        android:layout_marginBottom="2.5dp"
+        android:background="@color/btn_color_normal"
+        android:contentDescription="@string/btn_clear_description"
+        android:text="@string/btn_clear"
+        app:layout_constraintBottom_toTopOf="@id/sevenBtn"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/backspaceBtn"
+        style="@style/CommonButton"
+        android:background="@color/btn_color_normal"
+        android:contentDescription="@string/btn_backspace_description"
+        android:text="X"
+        app:layout_constraintEnd_toStartOf="@id/percentageBtn"
+        app:layout_constraintStart_toEndOf="@id/clearBtn"
+        app:layout_constraintTop_toTopOf="@id/clearBtn" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/percentageBtn"
+        style="@style/CommonButton"
+        android:background="@color/btn_color_normal"
+        android:contentDescription="@string/btn_percentage_description"
+        android:text="@string/btn_percentage"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/divisionBtn"
+        app:layout_constraintStart_toEndOf="@id/backspaceBtn"
+        app:layout_constraintTop_toTopOf="@id/clearBtn" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/divisionBtn"
+        style="@style/CommonButton"
+        android:background="@color/btn_color_operators"
+        android:contentDescription="@string/btn_division_description"
+        android:text="@string/btn_division"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calculatorResult">
+        app:layout_constraintTop_toTopOf="@id/clearBtn" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/clearBtn"
-            style="@style/CommonButton"
-            android:text="@string/btn_clear"
-            android:background="@color/btn_color_normal"
-            android:contentDescription="@string/btn_clear_description"
-            app:layout_constraintStart_toStartOf="@id/firstColumn"
-            app:layout_constraintTop_toTopOf="@id/firstColumn"
-            app:layout_constraintBottom_toTopOf="@id/sevenBtn" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/sevenBtn"
+        style="@style/CommonButton"
+        android:layout_marginBottom="2.5dp"
+        android:background="@color/btn_color_light"
+        android:contentDescription="@string/btn_clear_description"
+        android:text="7"
+        app:layout_constraintBottom_toTopOf="@id/fourBtn"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/backspaceBtn"
-            style="@style/CommonButton"
-            android:text="X"
-            android:background="@color/btn_color_normal"
-            android:contentDescription="@string/btn_backspace_description"
-            app:layout_constraintStart_toEndOf="@id/clearBtn"
-            app:layout_constraintEnd_toStartOf="@id/percentageBtn"
-            app:layout_constraintTop_toTopOf="@id/firstColumn"
-            app:layout_constraintBottom_toBottomOf="@id/clearBtn" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/eightBtn"
+        style="@style/CommonButton"
+        android:background="@color/btn_color_light"
+        android:contentDescription="@string/btn_backspace_description"
+        android:text="8"
+        app:layout_constraintEnd_toStartOf="@id/nineBtn"
+        app:layout_constraintStart_toEndOf="@id/sevenBtn"
+        app:layout_constraintTop_toTopOf="@id/sevenBtn" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/percentageBtn"
-            style="@style/CommonButton"
-            android:text="@string/btn_percentage"
-            android:textStyle="bold"
-            android:background="@color/btn_color_normal"
-            android:contentDescription="@string/btn_percentage_description"
-            app:layout_constraintStart_toEndOf="@id/backspaceBtn"
-            app:layout_constraintEnd_toStartOf="@id/divisionBtn"
-            app:layout_constraintTop_toTopOf="@id/firstColumn" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/nineBtn"
+        style="@style/CommonButton"
+        android:background="@color/btn_color_light"
+        android:contentDescription="@string/btn_percentage_description"
+        android:text="9"
+        app:layout_constraintEnd_toStartOf="@id/multiplyBtn"
+        app:layout_constraintStart_toEndOf="@id/eightBtn"
+        app:layout_constraintTop_toTopOf="@id/sevenBtn" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/divisionBtn"
-            style="@style/CommonButton"
-            android:text="@string/btn_division"
-            android:background="@color/btn_color_operators"
-            android:contentDescription="@string/btn_division_description"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/firstColumn" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/multiplyBtn"
+        style="@style/CommonButton"
+        android:background="@color/btn_color_operators"
+        android:contentDescription="@string/btn_division_description"
+        android:text="X"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/sevenBtn" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/sevenBtn"
-            style="@style/CommonButton"
-            android:text="7"
-            android:background="@color/btn_color_light"
-            android:contentDescription="@string/btn_clear_description"
-            android:layout_marginTop="2.5dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/clearBtn" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/fourBtn"
+        style="@style/CommonButton"
+        android:layout_marginBottom="2.5dp"
+        android:background="@color/btn_color_light"
+        android:contentDescription="Four"
+        android:text="4"
+        app:layout_constraintBottom_toTopOf="@id/oneBtn"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/eightBtn"
-            style="@style/CommonButton"
-            android:text="8"
-            android:background="@color/btn_color_light"
-            android:contentDescription="@string/btn_backspace_description"
-            app:layout_constraintStart_toEndOf="@id/sevenBtn"
-            app:layout_constraintEnd_toStartOf="@id/nineBtn"
-            app:layout_constraintTop_toTopOf="@id/sevenBtn" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/fiveBtn"
+        style="@style/CommonButton"
+        android:background="@color/btn_color_light"
+        android:contentDescription="Five"
+        android:text="5"
+        app:layout_constraintEnd_toStartOf="@id/sixBtn"
+        app:layout_constraintStart_toEndOf="@id/fourBtn"
+        app:layout_constraintTop_toTopOf="@id/fourBtn" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/nineBtn"
-            style="@style/CommonButton"
-            android:text="9"
-            android:background="@color/btn_color_light"
-            android:contentDescription="@string/btn_percentage_description"
-            app:layout_constraintStart_toEndOf="@id/eightBtn"
-            app:layout_constraintEnd_toStartOf="@id/multiplyBtn"
-            app:layout_constraintTop_toTopOf="@id/sevenBtn" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/sixBtn"
+        style="@style/CommonButton"
+        android:background="@color/btn_color_light"
+        android:contentDescription="Six"
+        android:text="6"
+        app:layout_constraintEnd_toStartOf="@id/plusBtn"
+        app:layout_constraintStart_toEndOf="@id/fiveBtn"
+        app:layout_constraintTop_toTopOf="@id/fourBtn" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/multiplyBtn"
-            style="@style/CommonButton"
-            android:text="X"
-            android:background="@color/btn_color_operators"
-            android:contentDescription="@string/btn_division_description"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/sevenBtn" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/plusBtn"
+        style="@style/CommonButton"
+        android:background="@color/btn_color_operators"
+        android:contentDescription="Plus"
+        android:text="+"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/fourBtn" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/fourBtn"
-            style="@style/CommonButton"
-            android:text="4"
-            android:background="@color/btn_color_light"
-            android:contentDescription="Four"
-            android:layout_marginTop="2.5dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/sevenBtn" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/oneBtn"
+        style="@style/CommonButton"
+        android:layout_marginBottom="2.5dp"
+        android:background="@color/btn_color_light"
+        android:contentDescription="One"
+        android:text="1"
+        app:layout_constraintBottom_toTopOf="@id/zeroBtn"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/fiveBtn"
-            style="@style/CommonButton"
-            android:text="5"
-            android:background="@color/btn_color_light"
-            android:contentDescription="Five"
-            app:layout_constraintStart_toEndOf="@id/fourBtn"
-            app:layout_constraintEnd_toStartOf="@id/sixBtn"
-            app:layout_constraintTop_toTopOf="@id/fourBtn" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/twoBtn"
+        style="@style/CommonButton"
+        android:background="@color/btn_color_light"
+        android:contentDescription="Two"
+        android:text="2"
+        app:layout_constraintEnd_toStartOf="@id/threeBtn"
+        app:layout_constraintStart_toEndOf="@id/oneBtn"
+        app:layout_constraintTop_toTopOf="@id/oneBtn" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/sixBtn"
-            style="@style/CommonButton"
-            android:text="6"
-            android:background="@color/btn_color_light"
-            android:contentDescription="Six"
-            app:layout_constraintStart_toEndOf="@id/fiveBtn"
-            app:layout_constraintEnd_toStartOf="@id/plusBtn"
-            app:layout_constraintTop_toTopOf="@id/fourBtn" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/threeBtn"
+        style="@style/CommonButton"
+        android:background="@color/btn_color_light"
+        android:contentDescription="Three"
+        android:text="3"
+        app:layout_constraintEnd_toStartOf="@id/minusBtn"
+        app:layout_constraintStart_toEndOf="@id/fiveBtn"
+        app:layout_constraintTop_toTopOf="@id/oneBtn" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/plusBtn"
-            style="@style/CommonButton"
-            android:text="+"
-            android:background="@color/btn_color_operators"
-            android:contentDescription="Plus"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/fourBtn" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/minusBtn"
+        style="@style/CommonButton"
+        android:background="@color/btn_color_operators"
+        android:contentDescription="Minus"
+        android:text="-"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/oneBtn" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/oneBtn"
-            style="@style/CommonButton"
-            android:text="1"
-            android:background="@color/btn_color_light"
-            android:contentDescription="One"
-            android:layout_marginTop="2.5dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/fourBtn" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/zeroBtn"
+        style="@style/CommonButton"
+        android:background="@color/btn_color_light"
+        android:contentDescription="Zero"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/twoBtn"
-            style="@style/CommonButton"
-            android:text="2"
-            android:background="@color/btn_color_light"
-            android:contentDescription="Two"
-            app:layout_constraintStart_toEndOf="@id/oneBtn"
-            app:layout_constraintEnd_toStartOf="@id/threeBtn"
-            app:layout_constraintTop_toTopOf="@id/oneBtn" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/positiveOrNegativeBtn"
+        style="@style/CommonButton"
+        android:background="@color/btn_color_light"
+        android:contentDescription="Positive or negative switch"
+        android:text="Z"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/threeBtn"
+        app:layout_constraintStart_toEndOf="@id/oneBtn" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/threeBtn"
-            style="@style/CommonButton"
-            android:text="3"
-            android:background="@color/btn_color_light"
-            android:contentDescription="Three"
-            app:layout_constraintStart_toEndOf="@id/fiveBtn"
-            app:layout_constraintEnd_toStartOf="@id/minusBtn"
-            app:layout_constraintTop_toTopOf="@id/oneBtn" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/decimalBtn"
+        style="@style/CommonButton"
+        android:background="@color/btn_color_light"
+        android:contentDescription="Decimal"
+        android:text=","
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/minusBtn"
+        app:layout_constraintStart_toEndOf="@id/fiveBtn" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/minusBtn"
-            style="@style/CommonButton"
-            android:text="-"
-            android:background="@color/btn_color_operators"
-            android:contentDescription="Minus"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/oneBtn" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/equalsToBtn"
+        style="@style/CommonButton"
+        android:background="@color/btn_color_operators"
+        android:contentDescription="Equals to"
+        android:text="="
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
